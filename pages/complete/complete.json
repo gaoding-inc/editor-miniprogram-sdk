@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "editor-miniprogram-sdk": "../../components/editor-miniprogram-sdk/editor-miniprogram-sdk"
+  }
+}

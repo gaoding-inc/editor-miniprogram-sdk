@@ -1,0 +1,8 @@
+<editor-miniprogram-sdk
+    templatesNavigate="/pages/index/index"
+    designNavigate="/pages/design/design"
+    completeNavigate="/pages/complete/complete"
+
+    thirdPartyUserCode="{{thirdPartyUserCode}}"
+    thirdCateId="112"
+    currentPage="templates"></editor-miniprogram-sdk>

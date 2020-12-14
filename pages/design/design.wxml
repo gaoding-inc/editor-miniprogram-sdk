@@ -1,0 +1,10 @@
+<editor-miniprogram-sdk
+    templatesNavigate="/pages/index/index"
+    designNavigate="/pages/design/design"
+    completeNavigate="/pages/complete/complete"
+
+    thirdPartyUserCode="{{thirdPartyUserCode}}"
+    thirdCateId="112"
+    currentPage="design"
+    mode="{{query.mode}}"
+    templateId="{{query.id}}"></editor-miniprogram-sdk>

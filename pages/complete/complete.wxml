@@ -1,0 +1,9 @@
+  <editor-miniprogram-sdk
+    templatesNavigate="/pages/index/index"
+    designNavigate="/pages/design/design"
+    completeNavigate="/pages/complete/complete"
+    currentPage="complete"
+
+    thirdPartyUserCode="{{thirdPartyUserCode}}"
+    image="{{query.image}}"
+    templateId="{{query.id}}"></editor-miniprogram-sdk>
