@@ -1,0 +1,19 @@
+{
+    "name": "@gaoding/editor-miniprogram-sdk",
+    "version": "0.0.1-beta.1",
+    "description": "稿定小程序编辑器对外 SDK",
+    "main": "src/editor-miniprogram-sdk.js",
+    "miniprogram": "src",
+    "publishConfig": {
+      "access": "public"
+    },
+    "scripts": {
+        "prepublishOnly": "cp -r ./demo/components/editor-miniprogram-sdk/* ./src"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "UNLICENSE",
+    "devDependencies": {
+    }
+}
+  

@@ -1,10 +1,10 @@
 <editor-miniprogram-sdk
-    templatesNavigate="/pages/index/index"
-    designNavigate="/pages/design/design"
-    completeNavigate="/pages/complete/complete"
+    templatesPage="/pages/index/index"
+    designPage="/pages/design/design"
+    completePage="/pages/complete/complete"
 
     thirdPartyUserCode="{{thirdPartyUserCode}}"
-    thirdCateId="112"
+    thirdCateId="67"
     currentPage="design"
     mode="{{query.mode}}"
     templateId="{{query.id}}"></editor-miniprogram-sdk>

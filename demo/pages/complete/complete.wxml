@@ -1,7 +1,7 @@
   <editor-miniprogram-sdk
-    templatesNavigate="/pages/index/index"
-    designNavigate="/pages/design/design"
-    completeNavigate="/pages/complete/complete"
+    templatesPage="/pages/index/index"
+    designPage="/pages/design/design"
+    completePage="/pages/complete/complete"
     currentPage="complete"
 
     thirdPartyUserCode="{{thirdPartyUserCode}}"
