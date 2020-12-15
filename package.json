@@ -1,6 +1,6 @@
 {
     "name": "@gaoding/editor-miniprogram-sdk",
-    "version": "0.0.1-beta.1",
+    "version": "0.0.1-beta.2",
     "description": "稿定小程序编辑器对外 SDK",
     "main": "src/editor-miniprogram-sdk.js",
     "miniprogram": "src",

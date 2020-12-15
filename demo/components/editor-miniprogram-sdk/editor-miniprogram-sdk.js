@@ -72,7 +72,7 @@ Component({
                 id: props.templateId,
                 mode: props.mode,
                 thirdCateId: props.thirdCateId,
-                thirdParty: 'qiye_miniprogram',
+                // thirdParty: 'qiye_miniprogram',
                 
                 templatesPage: props.templatesPage,
                 designPage: props.designPage,
@@ -81,7 +81,6 @@ Component({
                 sourceId: props.sourceId,
                 image: props.image,
 
-                filterPaidMaterial: 1,
                 __DEBUG__: 1,
             };
 
@@ -92,15 +91,21 @@ Component({
                 'templates': 'templates',
             }
 
-            // https://sdk.open-stage.gaoding.com/utms/a8dbab466f5e89356329d9a612aafc0f
-            const baseHost = 'http://design.dev.gaoding.com/';
-            const basePath = `h5/${routeMap[props.currentPage || 'templates'] || 'templates'}`;
+            const utmsMap = {
+                'complet': 'https://sdk.open-stage.gaoding.com/utms/f6f4c526533ef3ea5eea6bcd3601e539',
+                'complete': 'https://sdk.open-stage.gaoding.com/utms/f6f4c526533ef3ea5eea6bcd3601e539',
+                'templates': 'https://sdk.open-stage.gaoding.com/utms/3f341b5ad7fa7a1bb561b6d2b0c081c1',
+                'design': 'https://sdk.open-stage.gaoding.com/utms/a8dbab466f5e89356329d9a612aafc0f',
+            }
+
             const query = this.stringifyQuery(queryObj);
 
-            // if(props.currentPage !== 'complete') {
-            //     return 'http://172.16.23.196:8080/' + query;
-            // }
-            return baseHost + basePath + query;
+            return utmsMap[routeMap[props.currentPage || 'templates']] + query;
+
+            // const baseHost = 'https://sdk.open-stage.gaoding.com/';
+            // const basePath = `h5/${routeMap[props.currentPage || 'templates'] || 'templates'}`;
+
+            // return baseHost + basePath + query;
         }
     },
     pageLifetimes: {
