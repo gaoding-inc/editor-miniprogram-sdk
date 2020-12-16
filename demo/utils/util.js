@@ -19,7 +19,6 @@ const formatNumber = n => {
 function getCode(fn) {
   const kongServiceInfo =  '';
 
-
   wx.request({
     url: '',
     method: 'POST',

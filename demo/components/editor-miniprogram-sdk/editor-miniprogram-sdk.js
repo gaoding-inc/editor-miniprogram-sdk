@@ -20,15 +20,9 @@ Component({
         thirdPartyUserCode: {
             type: String,
         },
-        // 指定页面跳转路径 例：wx.navigateTo(/pages/templet/templet)
-        templatesPage: {
-            type: String,
-        },
-        designPage: {
-            type: String,
-        },
-        completePage: {
-            type: String,
+
+        pageRoutes: {
+            type: Object
         },
 
         // 原模板 ID （complete 页面所需字段）
@@ -45,7 +39,6 @@ Component({
     },
     observers: {
         'thirdPartyUserCode': function(v) {
-            console.log(v)
             v && this.setUrl();
         },
     },
@@ -54,7 +47,12 @@ Component({
             let str = '?';
             for(let k in query) {
                 k = encodeURIComponent(k);
-                if(query[k]) str += `&${k}=${query[k]}`;
+                if(query[k] && typeof query[k] === 'object') {
+                    str += `&${k}=` + encodeURIComponent(JSON.stringify(query[k]));
+                }
+                else if(query[k]) {
+                    str += `&${k}=${query[k]}`;
+                }
             }
             return str.replace('&', '');
         },
@@ -74,14 +72,11 @@ Component({
                 thirdCateId: props.thirdCateId,
                 // thirdParty: 'qiye_miniprogram',
                 
-                templatesPage: props.templatesPage,
-                designPage: props.designPage,
-                completePage: props.completePage,
-
+                pageRoutes: props.pageRoutes,
                 sourceId: props.sourceId,
                 image: props.image,
 
-                __DEBUG__: 1,
+                // __DEBUG__: 1,
             };
 
             const routeMap = {
@@ -92,17 +87,17 @@ Component({
             }
 
             const utmsMap = {
-                'complet': 'https://sdk.open-stage.gaoding.com/utms/f6f4c526533ef3ea5eea6bcd3601e539',
-                'complete': 'https://sdk.open-stage.gaoding.com/utms/f6f4c526533ef3ea5eea6bcd3601e539',
-                'templates': 'https://sdk.open-stage.gaoding.com/utms/3f341b5ad7fa7a1bb561b6d2b0c081c1',
-                'design': 'https://sdk.open-stage.gaoding.com/utms/a8dbab466f5e89356329d9a612aafc0f',
+                'complet': 'https://sdk.open.gaoding.com/utms/f6f4c526533ef3ea5eea6bcd3601e539',
+                'complete': 'https://sdk.open.gaoding.com/utms/f6f4c526533ef3ea5eea6bcd3601e539',
+                'templates': 'https://sdk.open.gaoding.com/utms/3f341b5ad7fa7a1bb561b6d2b0c081c1',
+                'design': 'https://sdk.open.gaoding.com/utms/a8dbab466f5e89356329d9a612aafc0f',
             }
 
             const query = this.stringifyQuery(queryObj);
 
             return utmsMap[routeMap[props.currentPage || 'templates']] + query;
 
-            // const baseHost = 'https://sdk.open-stage.gaoding.com/';
+            // const baseHost = 'http://design.dev.gaoding.com/';
             // const basePath = `h5/${routeMap[props.currentPage || 'templates'] || 'templates'}`;
 
             // return baseHost + basePath + query;

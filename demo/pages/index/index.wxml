@@ -1,8 +1,5 @@
 <editor-miniprogram-sdk
-    templatesPage="/pages/index/index"
-    designPage="/pages/design/design"
-    completePage="/pages/complete/complete"
-
+    pageRoutes="{{pageRoutes}}"
     thirdPartyUserCode="{{thirdPartyUserCode}}"
     thirdCateId="67"
     currentPage="templates"></editor-miniprogram-sdk>

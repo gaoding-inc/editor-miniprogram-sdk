@@ -7,7 +7,12 @@ Page({
    */
   data: {
     thirdPartyUserCode: '',
-    query: {}
+    query: {},
+    pageRoutes: {
+      templates: '/pages/index/index',
+      design: '/pages/design/design',
+      complete: '/pages/complete/complete',
+    }
   },
 
   /**
