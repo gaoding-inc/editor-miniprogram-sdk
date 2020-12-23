@@ -32,7 +32,16 @@ Component({
         // 编辑后的完成图 （complete 页面所需字段）
         image: {
             type: String
-        }
+        },
+
+        // 主题色
+        themeColor: {
+            type: String
+        },
+        // 保存按钮文案
+        buttonText: {
+            type: String
+        },
     },
     data: {
         url: ''
@@ -70,12 +79,15 @@ Component({
                 id: props.templateId,
                 mode: props.mode,
                 thirdCateId: props.thirdCateId,
-                // thirdParty: 'qiye_miniprogram',
                 
                 pageRoutes: props.pageRoutes,
                 sourceId: props.sourceId,
                 image: props.image,
+                themeColor: props.themeColor,
+                buttonText: props.buttonText,
 
+                // dev
+                // thirdParty: 'qiye_miniprogram',
                 // __DEBUG__: 1,
             };
 
