@@ -17,7 +17,7 @@ const formatNumber = n => {
 // 获取签名
 // https://www.yuque.com/docs/share/4e30e11a-ca1e-4a69-902b-0aa8f2b70c29?#
 function getCode(fn) {
-  const kongServiceInfo =  '';
+  const kongServiceInfo = '';
 
   wx.request({
     url: '',

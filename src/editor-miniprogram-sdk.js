@@ -83,7 +83,7 @@ Component({
                 pageRoutes: props.pageRoutes,
                 sourceId: props.sourceId,
                 image: props.image,
-                themeColor: props.themeColor,
+                themeColor: props.themeColor ? encodeURIComponent(props.themeColor) : '',
                 buttonText: props.buttonText,
 
                 // dev

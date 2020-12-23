@@ -1,7 +1,7 @@
   <editor-miniprogram-sdk
     pageRoutes="{{pageRoutes}}"
     currentPage="complete"
-
+    
     thirdPartyUserCode="{{thirdPartyUserCode}}"
     image="{{query.image}}"
     templateId="{{query.id}}"></editor-miniprogram-sdk>
