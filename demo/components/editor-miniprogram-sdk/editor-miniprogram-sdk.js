@@ -21,6 +21,7 @@ Component({
             type: String,
         },
 
+        // 小程序路由
         pageRoutes: {
             type: Object
         },
@@ -42,6 +43,13 @@ Component({
         buttonText: {
             type: String
         },
+        // 稿定账户登录，稿定内部专用
+        tokenData: {
+            type: String
+        },
+        env: {
+            type: String
+        }
     },
     data: {
         url: ''
@@ -85,6 +93,7 @@ Component({
                 image: props.image,
                 themeColor: props.themeColor ? encodeURIComponent(props.themeColor) : '',
                 buttonText: props.buttonText,
+                tokenData: props.tokenData,
 
                 // dev
                 // thirdParty: 'qiye_miniprogram',
@@ -107,17 +116,26 @@ Component({
 
             const query = this.stringifyQuery(queryObj);
 
+            // 内部开发调试
+            const baseHostMap = {
+                'local': 'http://design.dev.gaoding.com',
+                'dev': 'https://sdk.open-dev.gaoding.com',
+                'fat': 'https://sdk.open-fat.gaoding.com',
+                'stage': 'https://sdk.open-stage.gaoding.com',
+            };
+
+            if(props.env && baseHostMap[props.env]) {
+                const baseHost = baseHostMap[props.env];
+                const basePath = `/h5/${routeMap[props.currentPage]}`;
+                return baseHost + basePath + query + '&thirdParty=qiye_miniprogram';
+            }
+
             return utmsMap[routeMap[props.currentPage || 'templates']] + query;
-
-            // const baseHost = 'http://design.dev.gaoding.com/';
-            // const basePath = `h5/${routeMap[props.currentPage || 'templates'] || 'templates'}`;
-
-            // return baseHost + basePath + query;
         }
     },
     pageLifetimes: {
         show: function() {},
         hide: function() {},
         resize: function(size) {}
-      }
+    }
 })

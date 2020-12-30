@@ -14,7 +14,7 @@
     "coverView": true,
     "nodeModules": false,
     "autoAudits": false,
-    "showShadowRootInWxmlPanel": false,
+    "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
     "uglifyFileName": false,
     "checkInvalidKey": true,
@@ -63,6 +63,11 @@
           "name": "pages/index/index",
           "pathName": "pages/index/index",
           "query": "test=1",
+          "scene": null
+        },
+        {
+          "name": "pages/design/design",
+          "pathName": "pages/design/design",
           "scene": null
         }
       ]

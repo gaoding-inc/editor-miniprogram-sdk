@@ -1,7 +1,7 @@
 <editor-miniprogram-sdk
     pageRoutes="{{pageRoutes}}"
     thirdPartyUserCode="{{thirdPartyUserCode}}"
-    thirdCateId="67"
+    thirdCateId="80"
     currentPage="design"
     mode="{{query.mode}}"
     templateId="{{query.id}}"></editor-miniprogram-sdk>

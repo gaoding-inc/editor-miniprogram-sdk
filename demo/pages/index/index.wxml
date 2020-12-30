@@ -1,5 +1,5 @@
 <editor-miniprogram-sdk
     pageRoutes="{{pageRoutes}}"
     thirdPartyUserCode="{{thirdPartyUserCode}}"
-    thirdCateId="67"
+    thirdCateId="80"
     currentPage="templates"></editor-miniprogram-sdk>
