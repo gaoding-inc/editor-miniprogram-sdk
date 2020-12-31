@@ -55,9 +55,12 @@ Component({
         url: ''
     },
     observers: {
-        'thirdPartyUserCode': function(v) {
-            v && this.setUrl();
-        },
+        'thirdPartyUserCode,tokenData,templateId,thirdCateId,pageRoutes,currentPage,mode,image': function(v) {
+            const props = this.properties;
+            if(props.thirdPartyUserCode || props.tokenData) {
+                this.lazySetUrl();
+            }
+        }
     },
     methods: {
         stringifyQuery(query) {
@@ -73,10 +76,17 @@ Component({
             }
             return str.replace('&', '');
         },
+        lazySetUrl() {
+            clearTimeout(this._timer);
+            this._timer = setTimeout(() => {
+                this.setUrl();
+            }, 10)
+        },
         setUrl() {
-            console.log(this.getUrl() + '#wechat_redirect');
+            const url = this.getUrl() + '#wechat_redirect';
+            console.log(url);
             this.setData({
-                url: this.getUrl() + '#wechat_redirect'
+                url
             })
         },
         getUrl() {

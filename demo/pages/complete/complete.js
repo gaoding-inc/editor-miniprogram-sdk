@@ -11,7 +11,6 @@ Page({
     }
   },
   onLoad: function (options) {
-
     this.setData({
       query: options
     });
