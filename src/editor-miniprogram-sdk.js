@@ -43,8 +43,12 @@ Component({
         buttonText: {
             type: String
         },
-        // 稿定账户登录，稿定内部专用
+
+        // 稿定账户登录及调试，稿定内部专用
         tokenData: {
+            type: String
+        },
+        clientId: {
             type: String
         },
         env: {
@@ -104,6 +108,7 @@ Component({
                 themeColor: props.themeColor ? encodeURIComponent(props.themeColor) : '',
                 buttonText: props.buttonText,
                 tokenData: props.tokenData,
+                clientId: props.clientId,
 
                 // dev
                 // thirdParty: 'qiye_miniprogram',
