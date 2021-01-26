@@ -43,6 +43,10 @@ Component({
         buttonText: {
             type: String
         },
+        // 自定义webview标题
+        title: {
+            type: String
+        },
 
         // 稿定账户登录及调试，稿定内部专用
         tokenData: {
@@ -109,6 +113,7 @@ Component({
                 buttonText: props.buttonText,
                 tokenData: props.tokenData,
                 clientId: props.clientId,
+                title: props.title ? encodeURIComponent(props.title) : '',
 
                 // dev
                 // thirdParty: 'qiye_miniprogram',
