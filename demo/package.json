@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-      "@gaoding/editor-miniprogram-sdk": "0.0.2"
+      "@gaoding/editor-miniprogram-sdk": "0.0.8"
   }
 }

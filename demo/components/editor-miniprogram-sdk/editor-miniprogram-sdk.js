@@ -55,9 +55,12 @@ Component({
         clientId: {
             type: String
         },
+        query: {
+            type: String
+        },
         env: {
             type: String
-        }
+        },
     },
     data: {
         url: ''
@@ -147,10 +150,10 @@ Component({
             if(props.env && baseHostMap[props.env]) {
                 const baseHost = baseHostMap[props.env];
                 const basePath = `/h5/${routeMap[props.currentPage]}`;
-                return baseHost + basePath + query + '&thirdParty=qiye_miniprogram';
+                return baseHost + basePath + query + '&thirdParty=qiye_miniprogram&' + (props.query || '');
             }
 
-            return utmsMap[routeMap[props.currentPage || 'templates']] + query;
+            return utmsMap[routeMap[props.currentPage || 'templates']] + query + '&' + (props.query || '');
         }
     },
     pageLifetimes: {
