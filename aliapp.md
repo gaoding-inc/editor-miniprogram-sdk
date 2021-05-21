@@ -1,7 +1,4 @@
 # 小程序 SDK 使用指南
-
-[支付宝/淘宝小程序文档 ](./aliapp.md)
-
 ## 安装 SDK
 npm安装，[微信官方 npm 文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)
 ```
@@ -13,17 +10,17 @@ npm i @gaoding/editor-miniprogram-sdk
 ```json
 {
   "usingComponents": {
-    "editor-miniprogram-sdk": "@gaoding/editor-miniprogram-sdk"
+    "editor-miniprogram-sdk": "@gaoding/editor-miniprogram-sdk/aliapp"
   }
 }
 ```
 
-不使用构建工具序安装，拷贝[仓库中](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html) `components` 下的文件到项目中的放组件的目录，同样需要在页面配置json中声明
+不使用构建工具序安装，拷贝[仓库中](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html) `demo/components` 下的文件到项目中的放组件的目录，同样需要在页面配置json中声明
 
 ```json
 {
   "usingComponents": {
-    "editor-miniprogram-sdk": "../../components/editor-miniprogram-sdk/editor-miniprogram-sdk"
+    "editor-miniprogram-sdk": "../../components/editor-miniprogram-sdk/editor-miniprogram-sdk/aliapp"
   }
 }
 ```
